@@ -25,6 +25,10 @@ public class ChoosePositionsWindowManager : MonoBehaviour {
 
         CharactersPlaced = 0;
 
+        _bluePlaced = 0;
+
+        _redPlaced = 0;
+
         _lastClickedTile = null;
 
         _choosePositionTiles = GetComponentsInChildren<ChoosePositionTile>();
