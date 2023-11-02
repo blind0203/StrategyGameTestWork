@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class FieldPathFinder : MonoBehaviour
-{
+public class FieldPathFinder : MonoBehaviour {
     public FieldTileComponent _firstClickedTile { get; private set; }
     public FieldTileComponent _secondClickedTile { get; private set; }
 
@@ -46,7 +45,7 @@ public class FieldPathFinder : MonoBehaviour
             SetSelectables(_gameLoopManager.TurnIndex);
 
             CheckNeighbours(tile, 0);
-        } else if(tile.State == FieldTileComponent.TileState.Walkable || tile.State == FieldTileComponent.TileState.Attackable) {
+        } else if (tile.State == FieldTileComponent.TileState.Walkable || tile.State == FieldTileComponent.TileState.Attackable) {
             _turnSequencer.StartTurnSequence(_firstClickedTile, tile);
 
             _firstClickedTile = null;
@@ -74,7 +73,6 @@ public class FieldPathFinder : MonoBehaviour
     }
 
     private void CheckNeighbours(FieldTileComponent originTile, int iteration) {
-
         if (iteration == 2) return;
 
         for (int x = -1; x <= 1; x++) {

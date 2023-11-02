@@ -3,8 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class TurnSequencer : MonoBehaviour
-{
+public class TurnSequencer : MonoBehaviour {
     public Action OnSequenceStart;
     public Action<Transform, Transform, float> OnKillStart;
     public Action OnSequenceEnd;
@@ -18,11 +17,11 @@ public class TurnSequencer : MonoBehaviour
         Vector3 finalPosition = new Vector3(finalTile.Coordinates.x - 2, 0, finalTile.Coordinates.y - 2);
         Vector3 tempPosition = Vector3.zero;
         if (finalTile.CharacterOnTile != null) {
-            tempPosition = finalPosition + (new Vector3(startTile.Coordinates.x - 2, 0, startTile.Coordinates.y - 2) -finalPosition).normalized;
+            tempPosition = finalPosition + (new Vector3(startTile.Coordinates.x - 2, 0, startTile.Coordinates.y - 2) - finalPosition).normalized;
         }
 
         Sequence sequence = new Sequence(
-            startTile.CharacterOnTile, 
+            startTile.CharacterOnTile,
             finalTile.CharacterOnTile ?? null,
             tempPosition,
             finalPosition
@@ -45,12 +44,10 @@ public class TurnSequencer : MonoBehaviour
         float moveTime = 2;
 
         if (sequence.AttackableCharacter != null) {
-
-
             //sequence.AttackableCharacter.transform.DORotateQuaternion(Quaternion.LookRotation(-direction, Vector3.up), .5f).SetEase(Ease.InOutCubic);
 
             moveTime = (sequence.TempPosition - sequence.MovableCharacter.transform.position).magnitude / 3 + 1f;
-            
+
             OnKillStart?.Invoke(sequence.MovableCharacter.transform, sequence.AttackableCharacter.transform, moveTime);
 
             sequence.MovableCharacter.transform.DOMove(sequence.TempPosition, moveTime).SetEase(Ease.InOutSine).SetLink(gameObject).OnStart(() => {

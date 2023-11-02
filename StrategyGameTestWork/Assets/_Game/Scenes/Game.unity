@@ -9236,9 +9236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c585a2b9944c1428b9ea693c1d16c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blueCharacter: {fileID: 751293470388056018, guid: 55a83a64ee353c541918cf2561420e65,
+  _blueCharacter: {fileID: 9088919910213735730, guid: d6114fda01cfb6b4d88a6dd821a11a88,
     type: 3}
-  _redCharacter: {fileID: 876915060538927811, guid: f7ec391dc582f044cabae02d0dfe36ca,
+  _redCharacter: {fileID: 8749797737098542953, guid: f4604ec3982fc74488e3f630b68e54c3,
     type: 3}
   _fieldTilePrefab: {fileID: 6026695039110070474, guid: 37910afbe5a444441b73c7e12404b8e7,
     type: 3}

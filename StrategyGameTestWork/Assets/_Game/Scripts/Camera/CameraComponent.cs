@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using Zenject;
+using Unity.VisualScripting;
 
 public class CameraComponent : MonoBehaviour {
     [SerializeField] private Camera _camera;

@@ -58,7 +58,7 @@ public class GameAI : MonoBehaviour
             int r = Random.Range(0, _availableTiles.Count);
 
             while (_availableTiles[r].Count == 0) {
-                r = (r + 1) % _availableTiles.Count;
+                r.LoopedIncrease(_availableTiles.Count);
             }
 
             List<FieldTileComponent> attackTiles = _availableTiles[r].FindAll(x => x.CharacterOnTile != null);
